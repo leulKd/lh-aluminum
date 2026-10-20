@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LH Aluminum Works Trading PLC | Aluminum Windows, Doors &amp; Curtain Walls in Ethiopia</title>
+  <meta name="description" content="LH Aluminum Works Trading PLC designs, fabricates and installs aluminum curtain walls, windows and doors for government, institutional, commercial and residential projects across Ethiopia." />
+  <link rel="icon" href="images/lh-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1420;
+      --steel: #1a1f2e;
+      --mid: #2d3448;
+      --silver: #b0bec5;
+      --accent: #0d6efd;
+      --accent-dark: #0b5ed7;
+      --white: #f5f7fa;
+      --paper: #ffffff;
+      --soft: #eef1f5;
+      --text: #37474f;
+      --muted: #607d8b;
+      --radius: 10px;
+      --shadow: 0 10px 30px rgba(15, 20, 32, 0.10);
+      --nav-h: 76px;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+    h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; line-height: 1.1; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; inset: 0 0 auto 0; z-index: 1000;
+      height: var(--nav-h);
+      background: rgba(15, 20, 32, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { background: rgba(15, 20, 32, 0.97); box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-wrap {
+      width: 50px; height: 50px; border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--accent); background: var(--steel); flex-shrink: 0;
+    }
+    .logo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-logo-text { font-family: 'Rajdhani', sans-serif; color: var(--white); font-weight: 700; line-height: 1.05; }
+    .nav-logo-text b { display: block; font-size: 1.55rem; letter-spacing: 2px; color: var(--accent); }
+    .nav-logo-text small { display: block; font-size: 0.72rem; letter-spacing: 2.5px; font-weight: 600; color: var(--silver); }
+
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a {
+      display: block; text-decoration: none; color: #d5dde2;
+      font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 1rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 16px; border-radius: 6px; transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-links a.nav-cta { background: var(--accent); color: #fff; margin-left: 10px; padding: 10px 22px; }
+    .nav-links a.nav-cta:hover { background: var(--accent-dark); }
+
+    .menu-btn {
+      display: none; background: none; border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px; width: 46px; height: 46px; cursor: pointer; color: #fff;
+      align-items: center; justify-content: center;
+    }
+    .menu-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.02rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 16px 36px; border-radius: 6px; border: 2px solid transparent;
+      transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-outline { border-color: rgba(255,255,255,0.55); color: #fff; }
+    .btn-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
+    .btn-dark { background: var(--steel); color: #fff; }
+    .btn-dark:hover { background: var(--mid); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+      background:
+        linear-gradient(100deg, rgba(7,14,28,0.95) 0%, rgba(7,14,28,0.80) 42%, rgba(7,14,28,0.35) 100%),
+        url("images/hawassa-ministry-of-revenue.jpg") center / cover no-repeat,
+        linear-gradient(135deg, #071428 0%, #0b3b6f 55%, #071a2b 100%);
+      color: #fff; overflow: hidden;
+    }
+    .hero::after {
+      content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 160px;
+      background: linear-gradient(to top, rgba(7,14,28,0.9), transparent); pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; padding: calc(var(--nav-h) + 70px) 8% 50px; max-width: 880px; margin: auto 0; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.9rem;
+      letter-spacing: 3px; text-transform: uppercase; color: #cfe3ff;
+      padding: 8px 18px; border: 1px solid rgba(13,110,253,0.6); background: rgba(13,110,253,0.18);
+      border-radius: 40px; margin-bottom: 28px;
+    }
+    .hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .hero h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 24px; }
+    .hero h1 em { font-style: normal; color: #5aa2ff; display: block; }
+    .hero-sub { font-size: clamp(1.02rem, 1.6vw, 1.2rem); color: #c9d3da; max-width: 600px; margin-bottom: 40px; font-weight: 300; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .hero-highlights {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.14);
+      background: rgba(7,14,28,0.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .hl { display: flex; align-items: center; gap: 16px; padding: 26px 8% 26px 8%; border-right: 1px solid rgba(255,255,255,0.10); }
+    .hl:last-child { border-right: none; }
+    .hl svg { width: 34px; height: 34px; stroke: #5aa2ff; fill: none; stroke-width: 1.5; flex-shrink: 0; stroke-linecap: round; stroke-linejoin: round; }
+    .hl strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 1.15rem; letter-spacing: 0.5px; }
+    .hl span { font-size: 0.85rem; color: #aab6bf; }
+
+    .hero .reveal-load { opacity: 0; transform: translateY(26px); animation: rise 0.9s ease forwards; }
+    .hero .d1 { animation-delay: 0.05s; } .hero .d2 { animation-delay: 0.18s; }
+    .hero .d3 { animation-delay: 0.32s; } .hero .d4 { animation-delay: 0.46s; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+
+    /* ── STATS STRIP ── */
+    .stats { background: var(--steel); padding: 44px 8%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    .stat-num { font-family: 'Rajdhani', sans-serif; font-size: 3rem; font-weight: 700; color: #5aa2ff; line-height: 1; }
+    .stat-label { color: var(--silver); font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 8%; }
+    .section-tag { display: inline-block; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .section-title { font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 700; color: var(--steel); margin-bottom: 18px; }
+    .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 620px; }
+
+    /* ── SERVICES ── */
+    .services { background: var(--paper); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; margin-top: 56px; }
+    .service-card {
+      background: var(--steel); border-radius: var(--radius); padding: 38px 32px; position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(0,0,0,0.22); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { width: 58px; height: 58px; border-radius: 8px; background: rgba(13,110,253,0.12); border: 1px solid rgba(90,162,255,0.35); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+    .service-icon svg { width: 28px; height: 28px; stroke: #5aa2ff; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .service-card h3 { font-size: 1.45rem; color: #fff; margin-bottom: 12px; }
+    .service-card p { color: var(--silver); font-size: 0.95rem; }
+
+    /* ── PROJECT CARDS (shared by preview + gallery) ── */
+    .tile {
+      position: relative; overflow: hidden; border-radius: var(--radius); background: var(--steel);
+      cursor: pointer; box-shadow: var(--shadow); aspect-ratio: 4 / 3; border: 0; padding: 0; text-align: left; width: 100%;
+    }
+    .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .tile:hover img { transform: scale(1.07); }
+    .tile-overlay {
+      position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 22px;
+      background: linear-gradient(to top, rgba(10,14,24,0.92) 0%, rgba(10,14,24,0.15) 60%, transparent 100%);
+      opacity: 0; transition: opacity 0.3s; color: #fff;
+    }
+    .tile:hover .tile-overlay, .tile:focus-visible .tile-overlay { opacity: 1; }
+    .tile-cat { font-family: 'Rajdhani', sans-serif; font-size: 0.8rem; letter-spacing: 2.5px; text-transform: uppercase; color: #5aa2ff; font-weight: 700; }
+    .tile-title { font-family: 'Rajdhani', sans-serif; font-size: 1.35rem; font-weight: 700; }
+    .tile.no-img::after { content: 'Add photo'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--silver); font-family: 'Rajdhani', sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+    @media (hover: none) { .tile-overlay { opacity: 1; background: linear-gradient(to top, rgba(10,14,24,0.85) 0%, transparent 55%); } }
+
+    .gallery-preview { background: var(--soft); }
+    .preview-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; margin-top: 56px; }
+    .preview-grid .tile { grid-column: span 2; }
+    .preview-grid .tile:nth-child(1), .preview-grid .tile:nth-child(2) { grid-column: span 3; aspect-ratio: 16 / 10; }
+    .center-cta { margin-top: 48px; text-align: center; }
+
+    /* ── ABOUT ── */
+    .about { background: var(--steel); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; }
+    .about .section-title { color: #fff; }
+    .about .section-sub { color: var(--silver); max-width: 100%; }
+    .about-features { margin-top: 36px; display: flex; flex-direction: column; gap: 24px; }
+    .about-feature { display: flex; gap: 18px; }
+    .feature-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 9px; }
+    .about-feature strong { display: block; font-family: 'Rajdhani', sans-serif; font-size: 1.15rem; color: #fff; letter-spacing: 0.5px; }
+    .about-feature p { color: var(--silver); font-size: 0.95rem; }
+    .about-visual { position: relative; }
+    .about-img { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 5; background: var(--mid); }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-badge { position: absolute; bottom: -24px; left: -24px; background: var(--accent); color: #fff; padding: 22px 28px; border-radius: 8px; box-shadow: var(--shadow); }
+    .about-badge .num { font-family: 'Rajdhani', sans-serif; font-size: 2.8rem; font-weight: 700; line-height: 1; }
+    .about-badge .label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; }
+
+    /* ── CTA BAND ── */
+    .cta-band { background: linear-gradient(110deg, #0b3b6f, #0d6efd); color: #fff; padding: 70px 8%; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .cta-band h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 640px; }
+    .cta-band p { color: #d7e7ff; margin-top: 8px; }
+    .cta-band .btn { background: #fff; color: var(--ink); }
+    .cta-band .btn:hover { background: var(--ink); color: #fff; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--paper); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; margin-top: 56px; }
+    .contact-info { display: flex; flex-direction: column; gap: 30px; }
+    .contact-item { display: flex; gap: 20px; }
+    .contact-icon { width: 50px; height: 50px; border-radius: 8px; background: var(--steel); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 22px; height: 22px; stroke: #5aa2ff; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-item h4 { font-size: 1rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel); margin-bottom: 4px; }
+    .contact-item p, .contact-item a { color: var(--muted); font-size: 0.97rem; text-decoration: none; }
+    .contact-item a:hover { color: var(--accent); }
+    .contact-form { display: flex; flex-direction: column; gap: 18px; background: var(--white); padding: 36px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel); }
+    .form-group input, .form-group textarea, .form-group select {
+      border: 1.5px solid #cfd8dc; border-radius: 6px; padding: 13px 16px; font: inherit; font-size: 0.95rem; color: var(--text); background: #fff; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(13,110,253,0.12); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-note { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── FOOTER ── */
+    footer { background: #0b0f17; padding: 64px 8% 28px; color: #78909c; }
+    .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 50px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand .logo-wrap { width: 64px; height: 64px; margin-bottom: 16px; }
+    .footer-brand b { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; color: #fff; letter-spacing: 1px; display: block; }
+    .footer-brand p { font-size: 0.9rem; margin-top: 10px; max-width: 300px; }
+    .footer-col h4 { font-size: 1rem; color: #fff; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); display: inline-block; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col a { color: #78909c; text-decoration: none; font-size: 0.92rem; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { padding-top: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; color: #546e7a; }
+
+    /* ── GALLERY PAGE ── */
+    #gallery-page { display: none; }
+    .page-hero { padding: calc(var(--nav-h) + 64px) 8% 60px; background: linear-gradient(120deg, #0f1420, #1a2a45); color: #fff; }
+    .breadcrumb { display: flex; gap: 8px; font-family: 'Rajdhani', sans-serif; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 18px; color: var(--silver); }
+    .breadcrumb a { color: #5aa2ff; text-decoration: none; }
+    .page-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 12px; }
+    .page-hero p { color: #c9d3da; max-width: 620px; }
+    .full-gallery { padding: 56px 8% 90px; background: var(--soft); }
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+    .filter-btn {
+      font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 40px; border: 1.5px solid #cfd8dc; background: #fff; color: var(--steel); cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .gallery-full-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .project { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; }
+    .project:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(15,20,32,0.18); }
+    .project .tile { border-radius: 0; box-shadow: none; }
+    .project.hide { display: none; }
+    .project-info { padding: 20px 24px 24px; }
+    .project-info .tag { display: inline-block; font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: var(--accent); background: rgba(13,110,253,0.10); padding: 3px 10px; border-radius: 3px; margin-bottom: 10px; }
+    .project-info h3 { font-size: 1.3rem; color: var(--steel); margin-bottom: 6px; }
+    .project-info p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── LIGHTBOX ── */
+    .lightbox { position: fixed; inset: 0; z-index: 9999; background: rgba(8,10,16,0.97); display: flex; align-items: center; justify-content: center; padding: 70px 70px 90px; visibility: hidden; opacity: 0; transition: opacity 0.3s, visibility 0.3s; }
+    .lightbox.active { visibility: visible; opacity: 1; }
+    .lightbox-inner { position: relative; max-width: 100%; max-height: 100%; }
+    .lightbox-inner img { max-width: min(92vw, 1400px); max-height: calc(100vh - 170px); width: auto; height: auto; border-radius: 6px; box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
+    .lb-mark { position: absolute; bottom: 14px; right: 14px; display: flex; align-items: center; gap: 10px; background: rgba(10,12,18,0.6); backdrop-filter: blur(6px); border: 1px solid rgba(13,110,253,0.4); border-radius: 6px; padding: 6px 12px 6px 8px; pointer-events: none; }
+    .lb-mark .logo-wrap { width: 30px; height: 30px; border-width: 2px; }
+    .lb-mark span { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; color: #fff; text-transform: uppercase; }
+    .lb-btn { position: fixed; background: rgba(255,255,255,0.10); border: none; color: #fff; width: 52px; height: 52px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 10000; }
+    .lb-btn:hover { background: var(--accent); }
+    .lb-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .lb-close { top: 20px; right: 24px; }
+    .lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+    .lb-caption { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%); text-align: center; color: #fff; font-family: 'Rajdhani', sans-serif; letter-spacing: 1.5px; text-transform: uppercase; font-size: 1rem; white-space: nowrap; }
+    .lb-caption small { display: block; color: var(--silver); font-size: 0.8rem; margin-top: 2px; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .hero .reveal-load { opacity: 1; transform: none; animation: none; transition: none; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .hero-highlights { grid-template-columns: 1fr 1fr; }
+      .hl { padding: 20px 6%; border-bottom: 1px solid rgba(255,255,255,0.10); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+      .gallery-full-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .menu-btn { display: inline-flex; }
+      .nav-links {
+        position: fixed; top: var(--nav-h); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0;
+        background: rgba(15,20,32,0.98); padding: 12px 5% 24px; border-bottom: 2px solid var(--accent);
+        transform: translateY(-120%); transition: transform 0.35s ease; visibility: hidden;
+      }
+      .nav-links.open { transform: none; visibility: visible; }
+      .nav-links a { padding: 16px 8px; border-bottom: 1px solid rgba(255,255,255,0.07); border-radius: 0; }
+      .nav-links a.nav-cta { margin: 16px 0 0; text-align: center; border-radius: 6px; border: none; }
+    }
+    @media (max-width: 620px) {
+      section { padding: 72px 5%; }
+      .nav-logo-text small { display: none; }
+      .hero-content { padding: calc(var(--nav-h) + 40px) 5% 40px; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
+      .hero-highlights { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; padding: 40px 5%; }
+      .preview-grid { grid-template-columns: 1fr; }
+      .preview-grid .tile, .preview-grid .tile:nth-child(1), .preview-grid .tile:nth-child(2) { grid-column: span 1; aspect-ratio: 4 / 3; }
+      .gallery-full-grid { grid-template-columns: 1fr; }
+      .full-gallery { padding: 44px 5% 70px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px; }
+      .about-badge { left: 12px; bottom: -20px; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .lightbox { padding: 70px 12px 90px; }
+      .lb-prev { left: 6px; } .lb-next { right: 6px; }
+      .lb-btn { width: 44px; height: 44px; }
+      .cta-band { padding: 56px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a class="nav-logo" href="#home" aria-label="LH Aluminum Works home">
+      <span class="logo-wrap"><img src="images/lh-logo.jpg" alt="LH logo" onerror="this.style.display='none'" /></span>
+      <span class="nav-logo-text"><b>LH</b><small>ALUMINUM WORKS TRADING PLC</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#services" data-nav="services">Services</a></li>
+      <li><a href="#gallery" data-nav="gallery">Gallery</a></li>
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Request a Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════ HOME PAGE ═══════════ -->
+  <div id="home-page">
+
+    <header class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-badge reveal-load d1">Premium Aluminum Solutions</div>
+        <h1 class="reveal-load d2">Precision Aluminum<em>Built to Last</em></h1>
+        <p class="hero-sub reveal-load d3">From curtain walls on landmark government buildings to precision-engineered windows and doors for homes, LH Aluminum Works delivers strength, elegance and lasting quality across Ethiopia.</p>
+        <div class="hero-btns reveal-load d4">
+          <a href="#contact" class="btn btn-primary">Request a Quote</a>
+          <a href="#gallery" class="btn btn-outline">View Our Projects</a>
+        </div>
+      </div>
+      <div class="hero-highlights">
+        <div class="hl">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94z"/></svg>
+          <div><strong>Custom Fabrication</strong><span>Made to your specification</span></div>
+        </div>
+        <div class="hl">
+          <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-3.5 8.5-9 10-5.5-1.5-9-5-9-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><strong>Quality Profiles</strong><span>Certified aluminum systems</span></div>
+        </div>
+        <div class="hl">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><strong>On-Time Delivery</strong><span>Projects finished on schedule</span></div>
+        </div>
+        <div class="hl">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+          <div><strong>Expert Installation</strong><span>Skilled technicians &amp; engineers</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="reveal"><div class="stat-num">15+</div><div class="stat-label">Years Experience</div></div>
+      <div class="reveal"><div class="stat-num">100+</div><div class="stat-label">Projects Completed</div></div>
+      <div class="reveal"><div class="stat-num">99%</div><div class="stat-label">Client Satisfaction</div></div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <span class="section-tag reveal">What We Do</span>
+      <h2 class="section-title reveal">Our Core Services</h2>
+      <p class="section-sub reveal">We specialize in the design, fabrication and installation of premium aluminum systems for commercial, institutional and residential projects.</p>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+          <h3>Curtain Wall Systems</h3>
+          <p>High-performance aluminum curtain wall façades for commercial towers, government buildings and institutions. Engineered for weather resistance and architectural beauty.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="1"/><path d="M12 3v18M2 12h20"/></svg></div>
+          <h3>Aluminum Windows</h3>
+          <p>Custom-fabricated windows in casement, sliding, fixed and louvre styles, with single, double or triple glazing for optimal thermal performance.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 12h18M12 3v9"/></svg></div>
+          <h3>Aluminum Doors</h3>
+          <p>Robust, elegant entrance doors, storefront systems, sliding doors and automatic door solutions built to commercial specifications.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+          <h3>Residential Installations</h3>
+          <p>Tailored aluminum solutions for homes, apartments and housing developments, combining security, aesthetics and energy efficiency.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 20L12 4l9 16z"/><path d="M8 14h8"/></svg></div>
+          <h3>Structural Glazing</h3>
+          <p>Structural silicone glazing systems for frameless glass façades, skylights and glass canopies, delivering sleek, modern architectural statements.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94z"/></svg></div>
+          <h3>Maintenance &amp; Repairs</h3>
+          <p>Comprehensive maintenance programs and repair services for existing aluminum window and door systems, keeping your installations at their best.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="gallery-preview" id="featured">
+      <span class="section-tag reveal">Our Work</span>
+      <h2 class="section-title reveal">Featured Projects</h2>
+      <p class="section-sub reveal">A showcase of landmark installations across government buildings, universities and commercial developments.</p>
+      <div class="preview-grid" id="previewGrid"></div>
+      <div class="center-cta"><a href="#gallery" class="btn btn-dark">View Full Gallery</a></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about-grid">
+        <div>
+          <span class="section-tag reveal">About LH Aluminum</span>
+          <h2 class="section-title reveal">Built on Precision.<br />Driven by Quality.</h2>
+          <p class="section-sub reveal">LH Aluminum Works Trading PLC is an aluminum fabrication and installation company with a proven track record on major government, institutional and commercial projects across Ethiopia.</p>
+          <div class="about-features">
+            <div class="about-feature reveal"><div class="feature-dot"></div><div><strong>Government &amp; Institutional Projects</strong><p>Curtain wall and window installations for multiple Ministry of Revenue buildings, universities and federal housing developments.</p></div></div>
+            <div class="about-feature reveal"><div class="feature-dot"></div><div><strong>Expert Fabrication Team</strong><p>Skilled technicians and engineers using modern equipment and quality-certified aluminum profiles for installations that stand the test of time.</p></div></div>
+            <div class="about-feature reveal"><div class="feature-dot"></div><div><strong>End-to-End Service</strong><p>From design consultation through fabrication, installation and after-sales support, we manage every step of your project.</p></div></div>
+          </div>
+        </div>
+        <div class="about-visual reveal">
+          <div class="about-img"><img src="images/adama-ministry-of-revenue.jpg" alt="Adama Ministry of Revenue aluminum curtain wall project" loading="lazy" /></div>
+          <div class="about-badge"><div class="num">15+</div><div class="label">Years of Excellence</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <div class="cta-band">
+      <div>
+        <h2>Planning a building or renovation project?</h2>
+        <p>Tell us what you need and our team will respond with a free consultation and quote.</p>
+      </div>
+      <a href="#contact" class="btn">Request a Quote</a>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <span class="section-tag reveal">Contact Us</span>
+      <h2 class="section-title reveal">Let's Start Your Project</h2>
+      <p class="section-sub reveal">Ready to transform your building? Get in touch for a free consultation and project quote.</p>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h4>Office Address</h4><p>Legese Feleke Building, First Floor, Haya Hulet<br />Addis Ababa, Ethiopia<br />Serving projects nationwide</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></div>
+            <div><h4>Phone</h4><p><a href="tel:+251911212043">+251 911 212 043</a><br /><a href="tel:+251902030014">+251 902 030 014</a><br />Mon–Sat, 8am–6pm</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+            <div><h4>Email</h4><p><a href="mailto:lhaluminum365@gmail.com">lhaluminum365@gmail.com</a></p></div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label for="fn">First Name</label><input id="fn" type="text" placeholder="Your first name" required /></div>
+            <div class="form-group"><label for="ln">Last Name</label><input id="ln" type="text" placeholder="Your last name" /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="em">Email Address</label><input id="em" type="email" placeholder="you@email.com" /></div>
+            <div class="form-group"><label for="ph">Phone</label><input id="ph" type="tel" placeholder="+251 ..." /></div>
+          </div>
+          <div class="form-group">
+            <label for="pt">Project Type</label>
+            <select id="pt">
+              <option value="">Select a service...</option>
+              <option>Curtain Wall System</option>
+              <option>Aluminum Windows</option>
+              <option>Aluminum Doors</option>
+              <option>Residential Installation</option>
+              <option>Structural Glazing</option>
+              <option>Maintenance &amp; Repairs</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="msg">Message</label><textarea id="msg" placeholder="Describe your project: size, location, timeline and any special requirements..."></textarea></div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message →</button>
+          <p class="form-note">This opens your email app with the message ready to send to LH Aluminum Works.</p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════ GALLERY PAGE ═══════════ -->
+  <div id="gallery-page">
+    <div class="page-hero">
+      <div class="breadcrumb"><a href="#home">Home</a><span>›</span><span>Project Gallery</span></div>
+      <h1>Our Projects</h1>
+      <p>A portfolio of aluminum curtain wall, window and door installations across Ethiopia. Tap any photo to view it full size.</p>
+    </div>
+    <div class="full-gallery">
+      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+      <div class="gallery-full-grid" id="galleryGrid"></div>
+    </div>
+    <div class="cta-band">
+      <div><h2>Like what you see?</h2><p>Let's talk about your next project.</p></div>
+      <a href="#contact" class="btn">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo viewer">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="lightbox-inner" id="lbInner">
+      <img id="lbImg" src="" alt="" />
+      <div class="lb-mark"><span class="logo-wrap"><img src="images/lh-logo.jpg" alt="" /></span><span>LH Aluminum Works</span></div>
+    </div>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-wrap"><img src="images/lh-logo.jpg" alt="LH logo" onerror="this.style.display='none'" /></span>
+        <b>LH ALUMINUM WORKS TRADING PLC</b>
+        <p>Premium aluminum window, door and curtain wall solutions. Built with precision. Delivered with pride.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Curtain Wall Systems</a></li>
+          <li><a href="#services">Aluminum Windows</a></li>
+          <li><a href="#services">Aluminum Doors</a></li>
+          <li><a href="#services">Structural Glazing</a></li>
+          <li><a href="#services">Maintenance &amp; Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Project Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+251911212043">+251 911 212 043</a></li>
+          <li><a href="tel:+251902030014">+251 902 030 014</a></li>
+          <li><a href="mailto:lhaluminum365@gmail.com">lhaluminum365@gmail.com</a></li>
+          <li>Haya Hulet, Addis Ababa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 LH Aluminum Works Trading PLC. All rights reserved.</p>
+      <p>Addis Ababa, Ethiopia</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ── PROJECT DATA ──
+       To add a project, copy one line below. Put the photo in the images folder.
+       Categories used for the filter buttons are read automatically from "cat". */
+    const projects = [
+      { src: 'images/friendship-federal-housing.jpg', title: 'Friendship Federal Housing', cat: 'Residential', desc: 'Complete aluminum window and balcony railing systems for a large-scale housing development.' },
+      { src: 'images/adama-ministry-of-revenue.jpg', title: 'Adama Ministry of Revenue', cat: 'Government', desc: 'Aluminum curtain wall cladding and glazing for a prominent government tower in Adama.' },
+      { src: 'images/dessie-university.jpg', title: 'Dessie University', cat: 'Institutional', desc: 'Aluminum window and door systems throughout a major university campus building.' },
+      { src: 'images/hawassa-ministry-of-revenue.jpg', title: 'Hawassa Ministry of Revenue', cat: 'Government', desc: 'Modern aluminum curtain wall and glazing systems for the Ministry of Revenue building in Hawassa.' },
+      { src: 'images/tsenage-building.jpg', title: 'Tsenage Building', cat: 'Commercial', desc: 'Reflective glass curtain wall installation for a multi-story commercial building.' },
+      { src: 'images/tempered-glass-storefront.jpg', title: 'Tempered Glass Storefront', cat: 'Commercial', desc: 'Tempered glass storefront installation for a commercial building entrance.' },
+      { src: 'images/tempered-glass-installation.jpg', title: 'Tempered Glass Installation', cat: 'Commercial', desc: 'Commercial-grade tempered glass frontage installed with precise aluminum framing.' },
+      { src: 'images/tilahun-gutu-hotel-before.jpg', title: 'Tilahun Gutu Hotel — Before', cat: 'Commercial', desc: 'Initial stage of the aluminum window and façade work for Tilahun Gutu Hotel in Ambo.' },
+      { src: 'images/tilahun-gutu-hotel-after.jpg', title: 'Tilahun Gutu Hotel — After', cat: 'Commercial', desc: 'Completed aluminum window and façade installation for Tilahun Gutu Hotel in Ambo.' },
+      { src: 'images/university-east-wing.jpg', title: 'University Building — East Wing', cat: 'Institutional', desc: 'Aluminum window systems fitted across the east wing of a university building.' },
+      { src: 'images/university-main-block.jpg', title: 'University Building — Main Block', cat: 'Institutional', desc: 'Durable aluminum windows and doors for a multi-level university project.' },
+      { src: 'images/aluminum-profile-supply.jpg', title: 'Aluminum Profile Supply', cat: 'Commercial', desc: 'Aluminum profiles prepared and supplied for fabrication and installation projects.' },
+      { src: 'images/contemporary-facade.jpg', title: 'Contemporary Façade System', cat: 'Commercial', desc: 'Modern aluminum and glass façade detailing for a commercial building.' },
+      { src: 'images/dessie-curtain-wall.jpg', title: 'Dessie University Curtain Wall', cat: 'Institutional', desc: 'Curtain wall installation underway at Dessie University.' },
+      { src: 'images/dessie-entrance-glazing.jpg', title: 'Dessie University Entrance Glazing', cat: 'Institutional', desc: 'Glass entrance and aluminum glazing work for Dessie University.' }
+    ];
+
+    const $ = (s, r = document) => r.querySelector(s);
+    const esc = s => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+    function tileHTML(p, i, list) {
+      return `<button class="tile" type="button" data-list="${list}" data-i="${i}" aria-label="View ${esc(p.title)}">
+        <img src="${esc(p.src)}" alt="${esc(p.title)}: ${esc(p.cat)} aluminum project" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('no-img')" />
+        <span class="tile-overlay"><span class="tile-cat">${esc(p.cat)}</span><span class="tile-title">${esc(p.title)}</span></span>
+      </button>`;
+    }
+
+    /* Featured preview (first 5) */
+    $('#previewGrid').innerHTML = projects.slice(0, 5).map((p, i) => tileHTML(p, i, 'preview')).join('');
+
+    /* Full gallery + filters */
+    const grid = $('#galleryGrid');
+    grid.innerHTML = projects.map((p, i) => `
+      <article class="project" data-cat="${esc(p.cat)}">
+        ${tileHTML(p, i, 'gallery')}
+        <div class="project-info"><span class="tag">${esc(p.cat)}</span><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></div>
+      </article>`).join('');
+
+    const cats = ['All', ...new Set(projects.map(p => p.cat))];
+    $('#filters').innerHTML = cats.map((c, i) => `<button class="filter-btn${i === 0 ? ' active' : ''}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
+    $('#filters').addEventListener('click', e => {
+      const b = e.target.closest('.filter-btn'); if (!b) return;
+      document.querySelectorAll('.filter-btn').forEach(x => x.classList.toggle('active', x === b));
+      grid.querySelectorAll('.project').forEach(card => card.classList.toggle('hide', b.dataset.cat !== 'All' && card.dataset.cat !== b.dataset.cat));
+    });
+
+    /* ── LIGHTBOX ── */
+    const lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCaption');
+    let list = [], idx = 0;
+
+    function visibleList(which) {
+      if (which === 'preview') return projects.slice(0, 5);
+      const out = [];
+      grid.querySelectorAll('.project:not(.hide) .tile').forEach(t => out.push(projects[+t.dataset.i]));
+      return out;
+    }
+    function show() {
+      const p = list[idx];
+      lbImg.src = p.src; lbImg.alt = p.title;
+      lbCap.innerHTML = `${esc(p.title)}<small>${idx + 1} / ${list.length}</small>`;
+    }
+    function openLB(which, i) {
+      list = visibleList(which);
+      idx = Math.max(0, list.indexOf(projects[i]));
+      show(); lb.classList.add('active'); document.body.style.overflow = 'hidden';
+    }
+    function closeLB() { lb.classList.remove('active'); document.body.style.overflow = ''; }
+    function step(d) { idx = (idx + d + list.length) % list.length; show(); }
+
+    document.addEventListener('click', e => {
+      const t = e.target.closest('.tile');
+      if (t) openLB(t.dataset.list, +t.dataset.i);
+    });
+    $('#lbClose').onclick = closeLB;
+    $('#lbPrev').onclick = e => { e.stopPropagation(); step(-1); };
+    $('#lbNext').onclick = e => { e.stopPropagation(); step(1); };
+    lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLB();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+    let sx = 0;
+    lb.addEventListener('touchstart', e => { sx = e.changedTouches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+    }, { passive: true });
+
+    /* ── ROUTING (Home / Gallery) ── */
+    const home = $('#home-page'), gallery = $('#gallery-page');
+    function route() {
+      const h = location.hash.replace('#', '') || 'home';
+      const isGallery = h === 'gallery';
+      home.style.display = isGallery ? 'none' : 'block';
+      gallery.style.display = isGallery ? 'block' : 'none';
+      document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === (isGallery ? 'gallery' : 'home') && (isGallery || h === 'home')));
+      if (isGallery || h === 'home') {
+        window.scrollTo(0, 0);
+      } else {
+        const el = document.getElementById(h);
+        if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth' }));
+      }
+      closeMenu();
+      observeReveals();
+    }
+    /* Contact + sections must work from the gallery page too: go home first */
+    window.addEventListener('hashchange', route);
+
+    /* ── MOBILE MENU ── */
+    const menuBtn = $('#menuBtn'), navLinks = $('#navLinks');
+    function closeMenu() { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    navLinks.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+
+    /* ── NAV SHADOW ON SCROLL ── */
+    const nav = $('#nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    /* ── SCROLL REVEAL ── */
+    const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 }) : null;
+    function observeReveals() {
+      document.querySelectorAll('.reveal:not(.in)').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+    }
+
+    /* ── CONTACT FORM → opens the visitor's email app ── */
+    $('#contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const v = id => $('#' + id).value.trim();
+      if (!v('fn') || !(v('em') || v('ph'))) { alert('Please enter your first name and an email or phone number so we can reach you.'); return; }
+      const body = `Name: ${v('fn')} ${v('ln')}\nEmail: ${v('em')}\nPhone: ${v('ph')}\nProject type: ${v('pt')}\n\n${v('msg')}`;
+      location.href = `mailto:lhaluminum365@gmail.com?subject=${encodeURIComponent('Quote request: ' + (v('pt') || 'General inquiry'))}&body=${encodeURIComponent(body)}`;
+    });
+
+    route();
+  </script>
+</body>
+</html>
